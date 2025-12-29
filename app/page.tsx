@@ -70,6 +70,20 @@ const countries = [
     region: "North America",
     population: "129150971",
   },
+  {
+    id: "11",
+    country: "Argentina",
+    capital: "Buenos Aires",
+    region: "South America",
+    population: "46044703",
+  },
+  {
+    id: "12",
+    country: "Italy",
+    capital: "Rome",
+    region: "Europe",
+    population: "58870762",
+  },
 ];
 
 export default function Home() {
@@ -77,16 +91,18 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
-        {countries.map(({ id, country, capital, region, population }) => (
-          <Card
-            key={id}
-            id={id}
-            country={country}
-            capital={capital}
-            region={region}
-            population={population}
-          />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {countries.map(({ id, country, capital, region, population }) => (
+            <Card
+              key={id}
+              id={id}
+              country={country}
+              capital={capital}
+              region={region}
+              population={population}
+            />
+          ))}
+        </div>
       </main>
       <Footer />
     </>
